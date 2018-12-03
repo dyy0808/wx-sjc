@@ -1,0 +1,58 @@
+/* pages/cart/cart.wxss */
+.cart-topnav{
+  font-size:12px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  padding:20rpx;
+}
+.cart-main{
+  font-size:14px;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  background-color: #fff;
+}
+.cart-item{
+  display: flex;
+  justify-content: space-between;
+  border-bottom:1px solid #ddd;
+}
+.edit{
+  color: blue;
+}
+.sel{
+  display: flex;
+  align-items: center;
+}
+.cart-main image{ 
+  width: 200rpx;
+  height: 200rpx;
+  vertical-align: middle;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+/* 修改复选框样式 */
+checkbox .wx-checkbox-input{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border:1px solid #ddd;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+   width: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx; /* 对勾大小 30rpx */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1); 
+}
+.cart-con{
+  display: flex;
+  flex-direction: column;
+}
+.con-color{
+  color: #bbb;
+}

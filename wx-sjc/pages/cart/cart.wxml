@@ -1,0 +1,23 @@
+<!--pages/cart/cart.wxml-->
+<view class='cart-topnav'>
+  <view>
+    <checkbox></checkbox>
+    <text>时间臣</text>
+  </view>
+  <text class='edit'>编辑</text>
+</view>
+<view class='cart-main'>
+  <view class='cart-item pb-20 pt-20' wx:for="{{cartDetails}}">
+    <view class='sel'>
+      <checkbox></checkbox>
+        <image src="{{'http://127.0.0.1:7000/'+item.pic}}"></image> 
+    </view>
+    <view class='cart-con'>
+      <text>{{item.title}}</text>
+      <text class='con-color mb-10'>白色，均码</text>
+      <text class='price'>¥{{item.price}}</text>
+    </view>
+  </view>
+</view>
+
+

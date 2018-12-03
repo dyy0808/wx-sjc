@@ -1,0 +1,118 @@
+<block wx:for="{{list}}" wx:key="item.id">
+  <view class='slider'>
+    <swiper autoplay interval="3500" indicator-dots>
+          <swiper-item>
+              <image src="{{'http://127.0.0.1:7000/'+item.banner1}}" mode="aspectFill" lazy-load></image>
+          </swiper-item>
+          <swiper-item>
+              <image src="{{'http://127.0.0.1:7000/'+item.banner2}}" mode="aspectFill" lazy-load></image>
+          </swiper-item>
+          <swiper-item>
+              <image src="{{'http://127.0.0.1:7000/'+item.banner3}}" mode="aspectFill" lazy-load></image>
+          </swiper-item>
+      
+    </swiper>
+  </view>
+
+  <view class="text-center mt-10">
+    <view class='flex-between mt-10 mb-10'>
+      <text>{{item.title}}</text>
+      <view class="fx-right" bindtap='fx' >
+        <button class='font-12' open-type="share">
+          <image class="icon-fx" src="http://127.0.0.1:7000/img/分享.png"></image>
+          <text>分享</text>
+        </button>
+      </view>
+    </view>
+    <text class='price mt-10'>{{'￥'+item.price}}</text>
+    <text class='del mt-10 mb-10'>市场价：¥1044.23</text>
+    <view class="yf font-12 flex-between">
+      <text> 运费 免运费 </text>
+      <text> 剩余 30 </text>
+    </view>
+  </view>
+  <view class='divider'></view>
+  <view bindtap="select" class='flex-between arrow pl-20 pr-20 font' bindtap='select'>
+    <text class='pt-20 pb-20'>选择 颜色分类 尺寸</text>
+  </view>
+  <view class='divider'></view>
+   <!-- 尺码弹框 -->
+<view class='bg' wx:if="{{sizem}}">
+  <view  class='bom'>
+    <view class='dis'>
+      <view class="size-main">
+          <view class="size-main-top pt-20">
+            <image pl-20 src="{{'http://127.0.0.1:7000/'+item.banner1}}" mode="aspectFill" lazy-load></image>
+            <text class='title-hidden font'>{{item.title}}</text>
+            <text class='close' bindtap='sizeClose'>x</text>
+            <view class='price jl font-14'>¥{{item.price}}</view>
+          </view>
+          <view class='color-classify pl-20'>
+            <view class='font-14 mb-10 pt-20'>颜色分类：</view>
+            <text class='mt-10'>驼色</text>
+          </view>
+          <view class='size border-bottom pl-20 pb-20'>
+            <view class='font-14 pt-20'>尺寸：</view>
+            <block wx:for="{{size}}">
+              <text bindtap='selectSize' data-id="{{item.sid}}" class="{{item.sid == sizeNum?'active': ''}}">{{item.sname}}</text>
+            </block>
+          </view>
+          <view class='count pt-20 pb-20 pl-20'>
+             <view>
+              <text class='font-14 block'>购买数量:</text>
+              <text class='font-12'>剩余30件</text>
+            </view>
+            <view class='count-input'>
+              <text bindtap='sub'>-</text>
+              <input type="text" value='{{value}}' class='font-14'/>
+              <text bindtap='add'>+</text>
+            </view>
+          </view>
+      <view>
+      
+        <button class='buy' bindtap='addcart'>确定</button>
+      </view>
+      </view>
+      
+    </view>
+  </view>
+</view>
+</block>
+<!--  -->
+<view class='main-top'>
+  <view>
+    <image src="http://127.0.0.1:7000/img/x-logo.png"></image>
+    <view class='logo-name'>
+      <text class='font-14'>时间臣</text>
+      <text class='block official font mt-10'>管方</text>
+    </view>
+  </view>
+  <text class='shop font mr-10' bindtap='home'>进店</text>
+</view>
+<view class='promise'>
+  <text>企业认证</text>
+  <text>店铺认证</text>
+  <text>担保交易</text>
+  <text>线下店铺</text>
+</view>
+ <view class='divider'></view>
+ <view class='main-details'>
+   <view class="main-details-top">商品详情</view> 
+   <image src='http://127.0.0.1:7000/img/details-x.png'></image>
+ </view>
+ <!-- 底部购物 -->
+ <view class='details-footer'>
+    <view class='warp'>
+      <view class='display-com'>
+        <image src="http://127.0.0.1:7000/img/lt.png"></image>
+        <text>客服</text>
+      </view>
+      <view class='display-com'>
+        <image src="http://127.0.0.1:7000/img/x-cart.png"></image>
+        <text bindtap='addServe'>购物车</text>
+      </view>
+      <text class='add-cart' bindtap='select'>加入购物车</text>
+      <text class='add-buy'>立即购买</text>
+    </view>
+ </view> 
+

@@ -1,0 +1,41 @@
+/* pages/home/home.wxss */
+.banner,.banner image{
+  height: 250rpx;
+  width: 100%;
+}
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  font-size:12px;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #ddd;
+}
+.contain{
+ display: flex;
+ justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contain .contain-item{
+  width: 50%;
+  height: 600rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-size:12px;
+}
+.contain .contain-item image{
+  width:100%;
+  height: 100%;
+}
+.active{
+  color: #ff6867;
+  border-bottom:2px solid #ff6867;
+}
+
+.contain-xz,
+.contain-lyq{
+  /* display: none; */
+}
+

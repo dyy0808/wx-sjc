@@ -1,0 +1,36 @@
+<!--pages/home/home.wxml-->
+<view class='banner'>
+  <image src='http://127.0.0.1:7000/img/logo.png' mode="aspectFill" lazy-load></image>
+</view>
+<view class='navbar'>
+  <text bindtap='qzl' data-id="1" class="{{qz ? 'active' : ''}} ">秋装</text>
+  <text bindtap='xzl' data-id="2" class="{{xz ? 'active' : ''}} ">夏装</text>
+  <text bindtap='lyql' data-id="3" class="{{lyq ? 'active' : ''}} ">连衣裙</text>
+</view>
+<view class='contain'>
+
+  <!-- 秋装 -->
+  <block wx:if="{{qz}}">
+    <view  class='contain-qz contain-item' wx:for="{{qList}}" wx:key="qList.pid">
+        <image src="{{'http://127.0.0.1:7000/'+item.pic}}" mode="aspectFill" lazy-load  bindtap="detalis" data-pid="{{item.pid}}"></image>
+        <text bindtap="detalis" data-pid="{{item.pid}}">{{item.title}}</text>
+        <text class='price'>{{'￥'+item.price}}</text>
+    </view>
+  </block>
+    <!-- 夏装 -->
+  <block wx:elif="{{xz}}">
+    <view class='contain-xz contain-item' wx:for="{{xList}}" wx:key="xList.pid">
+      <image src="{{'http://127.0.0.1:7000/'+item.pic}}" mode="aspectFill" lazy-load data-pid="{{item.pid}}" bindtap='detalis' bindtap="detalis"></image>
+      <text data-pid="{{item.pid}}">{{item.title}}</text>
+      <text class='price'>{{'￥'+item.price}}</text>
+    </view>
+  </block>
+  <!-- 连衣裙 -->
+  <block wx:elif="{{lyq}}">
+    <view class='contain-lyq contain-item' wx:for="{{lList}}" wx:key="lList.pid">
+      <image src="{{'http://127.0.0.1:7000/'+item.pic}}" mode="aspectFill" lazy-load data-pid="{{item.pid}}" bindtap="detalis"></image>
+      <text data-pid="{{item.pid}}">{{item.title}}</text>
+      <text class='price'>{{'￥'+item.price}}</text>
+    </view>
+  </block> 
+</view>
